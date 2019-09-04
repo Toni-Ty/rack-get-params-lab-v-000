@@ -23,8 +23,15 @@ class Application
         resp.write "#{item}\n"
     end
   end
-elsif
-      resp.write "Path Not Found"
+    elsif
+      req.path.match(/add/)
+      add_item = req.params["item"]
+      if @@items.include? add_item
+        @@cart << add_item
+        resp.write "The #{add_item} has been added to your cart"
+      else
+        resp.write "Sorry that item is unavailable at this time"
+            resp.write "Path Not Found"
     end
 
     resp.finish
