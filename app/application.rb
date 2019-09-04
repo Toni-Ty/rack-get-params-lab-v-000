@@ -28,9 +28,9 @@ class Application
       add_item = req.params["item"]
       if @@items.include? add_item
         @@cart << add_item
-        resp.write "The #{add_item} has been added to your cart"
+        resp.write "added #{add_item}"
       else
-        resp.write "Sorry that item is unavailable at this time"
+        resp.write "We don't have that item"
     end
   else
             resp.write "Path Not Found"
