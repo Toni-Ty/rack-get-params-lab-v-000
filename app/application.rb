@@ -31,6 +31,8 @@ class Application
         resp.write "The #{add_item} has been added to your cart"
       else
         resp.write "Sorry that item is unavailable at this time"
+    end
+  else
             resp.write "Path Not Found"
     end
 
@@ -44,3 +46,4 @@ class Application
       return "Couldn't find #{search_term}"
     end
   end
+end
